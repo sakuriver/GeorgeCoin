@@ -13,7 +13,7 @@ module.exports = {
             },
             network_id: 3,
             gas: 4600000,
-            gasPrice: 1000000
+            gasPrice: 100
         }
     }
 };
