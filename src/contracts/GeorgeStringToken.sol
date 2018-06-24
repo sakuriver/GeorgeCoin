@@ -2,10 +2,19 @@ pragma solidity ^0.4.19;
 
 import "zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol";
 
-contract GeorgeWordToken is ERC721Token {
+contract GeorgeStringToken is ERC721Token {
   uint256 internal nextTokenId = 0;
 
-  constructor() public ERC721Token("GeorgeWordToken", "GWTKN") {}
+  struct GeorgeStorage {
+
+    uint256 tokenId; // 主キー
+
+    string value;
+
+  }
+
+
+  constructor() public ERC721Token("GeorgeStringToken", "GWTKN") {}
 
   function mint() external {
     uint256 tokenId = nextTokenId;
@@ -21,3 +30,4 @@ contract GeorgeWordToken is ERC721Token {
     super._burn(msg.sender, _tokenId);
   }
 }
+
